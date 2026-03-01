@@ -14,7 +14,7 @@ DATA_FILE = os.path.join(SCRIPT_DIR, "article.jsonl")
 client = chromadb.PersistentClient(path=CHROMA_PATH)
 remote_client = Client(host=f"http://localhost:11434")
 
-# 🔥 Clear old data on startup to ensure we have the latest news
+# Clear old data on startup to ensure we have the latest news
 try:
     client.delete_collection(name="articles_demo")
     print("🧹  Cleared old database records...")
